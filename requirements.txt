@@ -1,3 +1,4 @@
+albumentations==1.1.0
 argon2-cffi==21.1.0
 async-generator==1.10
 attrs==21.2.0
@@ -6,9 +7,10 @@ backcall==0.2.0
 bleach==4.1.0
 certifi==2021.5.30
 cffi==1.14.6
-charset-normalizer==2.0.4
-colorama==0.4.4
+charset-normalizer
+colorama
 cycler==0.10.0
+dataclasses==0.8
 decorator==4.4.2
 defusedxml==0.7.1
 efficientnet-pytorch==0.6.3
