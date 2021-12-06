@@ -6,6 +6,7 @@ from pathlib import Path
 import os
 import matplotlib.pyplot as plt
 import torch.cuda
+import nibabel as nib
 import albumentations as albu
 import segmentation_models_pytorch as smp
 from  segmentation_models_pytorch.utils.base import Metric
@@ -24,6 +25,17 @@ def load_data(path):
         data['masks'].append(str(path / 'masks' / all_masks[i]))
     return pd.DataFrame(data)
 
+
+def normalize(data):
+    data=(data-np.min(data))/(np.max(data)-np.min(data))
+    return data
+
+def load_case(image_nifty_file, label_nifty_file):
+    # load the image and label file, get the image content and return a numpy array for each
+    nii_file=nib.load(image_nifty_file)
+    image = np.array(nii_file.get_fdata())
+    label = np.array(nib.load(label_nifty_file).get_fdata())
+    return image, label,nii_file.affine
 
 class Dataset(BaseDataset):
     def __init__(
