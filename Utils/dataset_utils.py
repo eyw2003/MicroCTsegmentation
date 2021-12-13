@@ -32,9 +32,12 @@ def normalize(data):
 
 def load_case(image_nifty_file, label_nifty_file):
     # load the image and label file, get the image content and return a numpy array for each
+    label = None
     nii_file=nib.load(image_nifty_file)
     image = np.array(nii_file.get_fdata())
-    label = np.array(nib.load(label_nifty_file).get_fdata())
+    if os.path.exists(label_nifty_file):
+        label = np.array(nib.load(label_nifty_file).get_fdata())
+
     return image, label,nii_file.affine
 
 class Dataset(BaseDataset):
