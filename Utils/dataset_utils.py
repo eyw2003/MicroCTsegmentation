@@ -36,6 +36,7 @@ def load_case(image_nifty_file, label_nifty_file):
     label = None
     nii_file=nib.load(image_nifty_file)
     image = np.array(nii_file.get_fdata())
+    print(label_nifty_file)
     if os.path.exists(label_nifty_file):
         label = np.array(nib.load(label_nifty_file).get_fdata())
 
