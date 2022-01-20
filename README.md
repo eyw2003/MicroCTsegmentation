@@ -27,3 +27,5 @@ Finally type the following command to run the jupyter
 ```
 jupyter-notebook
 ```
+
+## Visualize Output Files
