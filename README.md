@@ -29,3 +29,5 @@ jupyter-notebook
 ```
 
 ## Visualize Output Files
+
+Please see the visualize_prediction.md file
