@@ -9,3 +9,6 @@ You can visualize the output **.nii.gz** files using two ways
 5. ![image](https://user-images.githubusercontent.com/43179913/150406185-2d7ed9fc-3343-4d44-a701-f81c4f03313b.png)
 
 ### Using ITK-Snap
+
+The output prediction.nii file can be visualized in ITK-Snap
+Click on segmentation>export surface mesh>next to save as STL mesh or VTK mesh (VTK is used for Amira software)
